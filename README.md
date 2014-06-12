@@ -97,4 +97,5 @@ grunt.initConfig({
 ```
 
 ## Release History
+- 2014-06-12   v0.1.1   Add detecting ContentType.
 - 2014-06-11   v0.1.0   First release.

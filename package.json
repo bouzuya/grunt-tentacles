@@ -1,7 +1,7 @@
 {
   "name": "grunt-tentacles",
   "description": "A Grunt plugin for uploading files to Amazon S3.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/bouzuya/grunt-tentacles",
   "author": {
     "name": "bouzuya",
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.0.0-rc.19",
+    "mime": "^1.2.11",
     "q": "^1.0.1"
   },
   "peerDependencies": {
