@@ -106,6 +106,7 @@ module.exports = function(grunt) {
   var uploadLocalFiles = function(files, gruntOptions) {
     var Promise = require('q').Promise;
     var fs = require('fs');
+    var mime = require('mime');
 
     var bucketName = gruntOptions.bucketName;
     var s3 = newS3Client(gruntOptions);
@@ -115,7 +116,7 @@ module.exports = function(grunt) {
           Bucket: bucketName,
           Key: file.key,
           Body: fs.readFileSync(file.path, {}),
-          // TODO: ContentType: 
+          ContentType: mime.lookup(file.path)
         };
         grunt.log.writeln('Upload "' + file.path + '" to "' + file.key + '".');
         s3.putObject(params, function(err) {

@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.0.0-rc.19",
+    "mime": "^1.2.11",
     "q": "^1.0.1"
   },
   "peerDependencies": {
