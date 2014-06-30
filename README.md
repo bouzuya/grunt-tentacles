@@ -25,10 +25,12 @@ In your project's Gruntfile, add a section named `tentacles` to the data object 
 ```js
 grunt.initConfig({
   tentacles: {
-    options: {
-      bucketName: 'bucket.example.com'
-    },
-    src: ['app/index.html', 'app/styles/main.css']
+    overview: {
+      options: {
+        bucketName: 'bucket.example.com'
+      },
+      src: ['app/index.html', 'app/styles/main.css']
+    }
   },
 });
 ```
@@ -66,10 +68,12 @@ Upload `app/index.html`, `app/styles/main.css` to `bucket.example.com` bucket.
 // - process.env.AWS_REGIONS
 grunt.initConfig({
   tentacles: {
-    options: {
-      bucketName: 'bucket.example.com'
-    },
-    src: ['app/index.html', 'app/styles/main.css']
+    default: {
+      options: {
+        bucketName: 'bucket.example.com'
+      },
+      src: ['app/index.html', 'app/styles/main.css']
+    }
   },
 });
 ```
@@ -83,19 +87,22 @@ Upload `app/` directory to `bucket.example.com` bucket. ( files.*cwd* = `app` )
 ```js
 grunt.initConfig({
   tentacles: {
-    options: {
-      bucketName:      'bucket.example.com',
-      accessKeyId:     process.env.MY_ACCESS_KEY_ID,
-      secretAccessKey: process.env.MY_SECRET_ACCESS_KEY,
-      regions:         process.env.MY_REGIONS,
-    },
-    files: [
-      { cwd: 'app', src: '**', dot: true }
-    ]
+    custom: {
+      options: {
+        bucketName:      'bucket.example.com',
+        accessKeyId:     process.env.MY_ACCESS_KEY_ID,
+        secretAccessKey: process.env.MY_SECRET_ACCESS_KEY,
+        regions:         process.env.MY_REGIONS,
+      },
+      files: [
+        { cwd: 'app', src: '**', dot: true, filter: 'isFile' }
+      ]
+    }
   }
 });
 ```
 
 ## Release History
+- 2014-06-30   v0.1.2   Fix README.
 - 2014-06-12   v0.1.1   Add detecting ContentType.
 - 2014-06-11   v0.1.0   First release.
