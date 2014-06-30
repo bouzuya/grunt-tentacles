@@ -1,11 +1,11 @@
 {
   "name": "grunt-tentacles",
   "description": "A Grunt plugin for uploading files to Amazon S3.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/bouzuya/grunt-tentacles",
   "author": {
     "name": "bouzuya",
-    "email": "bouzuya@gmail.com",
+    "email": "m@bouzuya.net",
     "url": "http://bouzuya.net/"
   },
   "repository": {
@@ -24,9 +24,6 @@
   "engines": {
     "node": ">= 0.8.0"
   },
-  "scripts": {
-    "test": "grunt test"
-  },
   "dependencies": {
     "aws-sdk": "^2.0.0-rc.19",
     "mime": "^1.2.11",
@@ -37,8 +34,8 @@
   },
   "keywords": [
     "gruntplugin",
-    "aws",
     "amazon",
+    "aws",
     "s3"
   ]
 }
