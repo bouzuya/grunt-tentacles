@@ -13,12 +13,17 @@ module.exports = function(grunt) {
   var newS3Client = function(gruntOptions) {
     var S3 = require('aws-sdk').S3;
 
-    return new S3({
-      apiVersion: '2006-03-01',
-      accessKeyId: gruntOptions.accessKeyId,
-      secretAccessKey: gruntOptions.secretAccessKey,
-      region: gruntOptions.region
-    });
+    var gruntOptions
+
+    var options = {
+      apiVersion: '2006-03-01'
+    };
+    for (var key in gruntOptions) {
+      if (gruntOptions.hasOwnProperty(key)) {
+        options[key] = gruntOptions[key];
+      }
+    }
+    return new S3(options);
   };
 
   // [{ key: '', path: '', digest: '' }]
