@@ -103,6 +103,7 @@ grunt.initConfig({
 ```
 
 ## Release History
+- 2014-12-21   v0.2.0   Support `AWS.S3` all options.
 - 2014-06-30   v0.1.2   Fix README.
 - 2014-06-12   v0.1.1   Add detecting ContentType.
 - 2014-06-11   v0.1.0   First release.
